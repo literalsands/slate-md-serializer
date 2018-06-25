@@ -33,7 +33,7 @@ const RULES = [
       // newlines - i.e. paragraphs, blockquotes and lists.
       const addNewLine = (children) => {
         if (document.getNextSibling(obj.key)) {
-          return children + "\n\n";
+          return children + "\n";
         }
         else {
           return children;
