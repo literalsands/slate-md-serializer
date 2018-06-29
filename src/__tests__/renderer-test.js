@@ -24,12 +24,12 @@ This is the second sentance
   expect(getNodes(text)).toMatchSnapshot();
 });
 
-test("maintains multiple empty paragraphs", () => {
+test("does not add unnecessary empty paragraphs", () => {
   const text = `
 This is the first sentance
 
 
-Two empty paragraphs above
+No empty paragraphs above
 `;
   expect(getNodes(text)).toMatchSnapshot();
 });
@@ -343,11 +343,11 @@ test("ignores empty link", () => {
   expect(getNodes(text)).toMatchSnapshot();
 });
 
-test("parses empty string", () => {
+test("parses empty string into empty paragraph", () => {
   expect(getNodes("")).toMatchSnapshot();
 });
 
-test("parses whitespace string", () => {
+test("parses whitespace string into empty paragraph", () => {
   expect(getNodes("   ")).toMatchSnapshot();
 });
 
@@ -362,4 +362,8 @@ test("handles escaped marks", () => {
   expect(getNodes("this is \\*not italic\\*")).toMatchSnapshot();
   expect(getNodes("this is \\[not\\]\\(a link\\)")).toMatchSnapshot();
   expect(getNodes("this is \\!\\[not\\]\\(an image\\)")).toMatchSnapshot();
+});
+
+test("Does not add extraneous backslashes", () => {
+  expect(Markdown.serialize(Markdown.deserialize("(Hello!) Yay."))).toEqual("(Hello!) Yay.");
 });
