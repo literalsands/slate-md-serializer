@@ -144,7 +144,7 @@ test("quote is not greedy about newlines", () => {
   const text = `
 > this is a quote
 
-this is a paragraph
+# this is a heading
 `;
   expect(getNodes(text)).toMatchSnapshot();
 });

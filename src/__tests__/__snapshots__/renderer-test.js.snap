@@ -2555,14 +2555,14 @@ Array [
           Object {
             "marks": Array [],
             "object": "leaf",
-            "text": "this is a paragraph",
+            "text": "this is a heading",
           },
         ],
         "object": "text",
       },
     ],
     "object": "block",
-    "type": "paragraph",
+    "type": "heading1",
   },
 ]
 `;
@@ -2586,42 +2586,6 @@ Array [
     ],
     "object": "block",
     "type": "block-quote",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
-  },
-  Object {
-    "data": Object {},
-    "isVoid": false,
-    "nodes": Array [
-      Object {
-        "leaves": Array [
-          Object {
-            "marks": Array [],
-            "object": "leaf",
-            "text": "",
-          },
-        ],
-        "object": "text",
-      },
-    ],
-    "object": "block",
-    "type": "paragraph",
   },
   Object {
     "data": Object {},

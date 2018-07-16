@@ -186,7 +186,8 @@ class Markdown {
       this.serializeNode(node, document)
     );
 
-    const output = elements.join("\n");
+    // Disallow three or more new lines in a row
+    const output = elements.join("\n").replace(/\n{3,}/g, "\n\n");
 
     // trim beginning whitespace
     return output.replace(/^\s+/g, "");
