@@ -1089,9 +1089,13 @@ Parser.prototype.tok = function() {
     }
     case "blockquote_start": {
       let body = [];
+      let first = true;
 
       while (this.next().type !== "blockquote_end") {
-        body.push(this.inline.parse(this.token.text));
+        // For multi-line blockquotes, nodes are paragraphs and let's make sure
+        // to add newlines in between the generated text nodes
+        body.push(this.inline.parse(`${first ? '' : '\n\n'}${this.token.text}`));
+        first = false;
       }
       return this.renderer.blockquote(body);
     }
