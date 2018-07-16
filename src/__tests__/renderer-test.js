@@ -121,7 +121,7 @@ test("parses quote", () => {
   expect(getNodes(text)).toMatchSnapshot();
 });
 
-test.only("parses quote with newlines and marks", () => {
+test("parses quote with newlines and marks", () => {
   const text = `
 > this is a *quote*
 > this is the second part of the quote
