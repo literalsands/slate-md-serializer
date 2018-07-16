@@ -37,7 +37,7 @@ test("maintains multiple empty paragraphs", () => {
 This is the first sentance
 
 
-Two empty paragraphs above
+No empty paragraphs above
 `;
   expect(getNodes(text)).toMatchSnapshot();
 });
@@ -139,6 +139,7 @@ test("parses quote", () => {
 test("parses quote followed by list with quote (outline/#723)", () => {
   const text = `
 > this is a quote
+
 1. > this is a list item
 `;
   expect(getNodes(text)).toMatchSnapshot();
