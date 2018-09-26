@@ -139,8 +139,15 @@ test("parses quote", () => {
 test("parses quote followed by list with quote (outline/#723)", () => {
   const text = `
 > this is a quote
+<<<<<<< HEAD
 
 1. > this is a list item
+=======
+1. > this is a list item with a quote
+
+> 1. this is a quote with a list item
+> 2. this is the second list item
+>>>>>>> master
 `;
   expect(getNodes(text)).toMatchSnapshot();
 });
