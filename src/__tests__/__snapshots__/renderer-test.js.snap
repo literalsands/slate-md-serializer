@@ -856,6 +856,57 @@ Array [
 ]
 `;
 
+exports[`parses hashtag 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": "this is a ",
+          },
+        ],
+        "object": "text",
+      },
+      Object {
+        "data": Object {},
+        "isVoid": false,
+        "nodes": Array [
+          Object {
+            "leaves": Array [
+              Object {
+                "marks": Array [],
+                "object": "leaf",
+                "text": "#hashtag",
+              },
+            ],
+            "object": "text",
+          },
+        ],
+        "object": "inline",
+        "type": "hashtag",
+      },
+      Object {
+        "leaves": Array [
+          Object {
+            "marks": Array [],
+            "object": "leaf",
+            "text": " example",
+          },
+        ],
+        "object": "text",
+      },
+    ],
+    "object": "block",
+    "type": "paragraph",
+  },
+]
+`;
+
 exports[`parses heading1 1`] = `
 Array [
   Object {
@@ -2292,6 +2343,84 @@ Array [
 `;
 
 exports[`parses quote with newlines and marks 1`] = `
+Array [
+  Object {
+    "data": Object {},
+    "isVoid": false,
+    "nodes": Array [
+      Object {
+        "data": Object {},
+        "isVoid": false,
+        "nodes": Array [
+          Object {
+            "leaves": Array [
+              Object {
+                "marks": Array [],
+                "object": "leaf",
+                "text": "this is a ",
+              },
+              Object {
+                "marks": Array [
+                  Object {
+                    "data": Object {},
+                    "object": "mark",
+                    "type": "italic",
+                  },
+                ],
+                "object": "leaf",
+                "text": "quote",
+              },
+            ],
+            "object": "text",
+          },
+        ],
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "data": Object {},
+        "isVoid": false,
+        "nodes": Array [
+          Object {
+            "leaves": Array [
+              Object {
+                "marks": Array [],
+                "object": "leaf",
+                "text": "this is the second part of the quote",
+              },
+            ],
+            "object": "text",
+          },
+        ],
+        "object": "block",
+        "type": "paragraph",
+      },
+      Object {
+        "data": Object {},
+        "isVoid": false,
+        "nodes": Array [
+          Object {
+            "leaves": Array [
+              Object {
+                "marks": Array [],
+                "object": "leaf",
+                "text": "this is the third part of the quote",
+              },
+            ],
+            "object": "text",
+          },
+        ],
+        "object": "block",
+        "type": "paragraph",
+      },
+    ],
+    "object": "block",
+    "type": "block-quote",
+  },
+]
+`;
+
+exports[`parses quote with newlines and marks 2`] = `
 Array [
   Object {
     "data": Object {},

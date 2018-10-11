@@ -139,15 +139,20 @@ test("parses quote", () => {
 test("parses quote followed by list with quote (outline/#723)", () => {
   const text = `
 > this is a quote
-<<<<<<< HEAD
-
-1. > this is a list item
-=======
 1. > this is a list item with a quote
 
 > 1. this is a quote with a list item
 > 2. this is the second list item
->>>>>>> master
+`;
+  expect(getNodes(text)).toMatchSnapshot();
+});
+
+test("parses quote with newlines and marks", () => {
+  const text = `
+> this is a *quote*
+> this is the second part of the quote
+>
+> this is the third part of the quote
 `;
   expect(getNodes(text)).toMatchSnapshot();
 });
@@ -380,6 +385,11 @@ test("parses indented code blocks", () => {
       return hello;
     }
 `;
+  expect(getNodes(text)).toMatchSnapshot();
+});
+
+test("parses hashtag", () => {
+  const text = `this is a #hashtag example`;
   expect(getNodes(text)).toMatchSnapshot();
 });
 
